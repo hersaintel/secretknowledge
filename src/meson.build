@@ -4,7 +4,7 @@ python_installation = python.find_installation('python3', required: true)
 # Configure launcher
 conf = configuration_data()
 conf.set('VERSION', meson.project_version())
-conf.set('APP_ID', 'io.hersaintel.secretknowledge')
+conf.set('APP_ID', 'io.github.hersaintel.secretknowledge')
 conf.set('PKGDATADIR', get_option('prefix') / get_option('datadir') / 'secret-knowledge')
 conf.set('PYTHON', python_installation.full_path())
 

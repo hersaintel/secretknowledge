@@ -9,7 +9,7 @@ import urllib.request, urllib.error, urllib.parse
 import gi
 
 from gi.repository import GLib
-GLib.set_prgname("io.github.hersaintel.secretknowledge")
+GLib.set_prgname("io.hersaintel.secretknowledge")
 GLib.set_application_name("Book of Secret Knowledge")
 
 gi.require_version("Gtk", "4.0")
@@ -23,7 +23,7 @@ for wk in ("6.0", "4.1", "4.0"):
 
 from gi.repository import Gtk, Adw, WebKit, Gio, Gdk
 
-APP_ID   = "io.github.hersaintel.secretknowledge"
+APP_ID   = "io.hersaintel.secretknowledge"
 APP_NAME = "Book of Secret Knowledge"
 VERSION  = "2.0.0"
 
@@ -327,12 +327,11 @@ class SecretKnowledgeApp(Adw.Application):
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
-# This is set by the Meson-configured launcher script
-PKGDATADIR = os.environ.get('SECRET_KNOWLEDGE_DATA', 
-    os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'secret-knowledge', 'data')))
-
 def main():
-    data_dir = PKGDATADIR
+    data_dir = os.environ.get(
+        "SECRET_KNOWLEDGE_DATA",
+        os.path.realpath(os.path.join(os.path.dirname(__file__), "..", "data"))
+    )
     html = os.path.join(data_dir, "secret-knowledge-v2.html")
     if not os.path.exists(html):
         print(f"Error: {html} not found", file=sys.stderr)
