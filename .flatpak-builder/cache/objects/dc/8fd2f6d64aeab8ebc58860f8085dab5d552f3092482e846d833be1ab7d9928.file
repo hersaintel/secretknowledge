@@ -1,0 +1,26 @@
+[Application]
+name=io.github.hersaintel.secretknowledge
+runtime=org.gnome.Platform/x86_64/46
+sdk=org.gnome.Sdk/x86_64/46
+command=secret-knowledge
+
+[Context]
+shared=network;ipc;
+sockets=x11;wayland;session-bus;fallback-x11;
+devices=dri;
+
+[Session Bus Policy]
+org.freedesktop.Notifications=talk
+org.freedesktop.portal.Desktop=talk
+
+[Environment]
+GI_TYPELIB_PATH=/app/lib/girepository-1.0:/usr/lib/girepository-1.0
+LD_LIBRARY_PATH=/app/lib:/usr/lib
+
+[Extension io.github.hersaintel.secretknowledge.Debug]
+directory=lib/debug
+autodelete=true
+no-autodownload=true
+
+[Build]
+built-extensions=io.github.hersaintel.secretknowledge.Debug;

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="book" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="lock" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded square (macOS/GNOME style) -->
+  <rect width="128" height="128" rx="28" ry="28" fill="url(#bg)"/>
+
+  <!-- Subtle border glow -->
+  <rect width="128" height="128" rx="28" ry="28"
+        fill="none" stroke="#2563eb" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Book pages (right side, layered) -->
+  <rect x="46" y="20" width="48" height="72" rx="5" fill="#1e3a8a" opacity="0.6"/>
+  <rect x="43" y="18" width="48" height="72" rx="5" fill="#1e40af" opacity="0.8"/>
+
+  <!-- Book main body -->
+  <rect x="22" y="16" width="50" height="76" rx="6" fill="url(#book)" filter="url(#shadow)"/>
+
+  <!-- Book spine darker strip -->
+  <rect x="22" y="16" width="8" height="76" rx="6" fill="#1e3a8a"/>
+  <rect x="26" y="16" width="4" height="76" fill="#1e3a8a"/>
+
+  <!-- Terminal prompt ">" in book -->
+  <text x="36" y="46" font-family="monospace" font-size="13" font-weight="bold"
+        fill="#4ade80" opacity="0.9">&gt;_</text>
+
+  <!-- Code lines in book -->
+  <rect x="36" y="52" width="26" height="2.5" rx="1.2" fill="#93c5fd" opacity="0.7"/>
+  <rect x="36" y="59" width="20" height="2.5" rx="1.2" fill="#93c5fd" opacity="0.5"/>
+  <rect x="36" y="66" width="22" height="2.5" rx="1.2" fill="#93c5fd" opacity="0.4"/>
+
+  <!-- Lock badge (bottom right) -->
+  <circle cx="88" cy="90" r="26" fill="#0d1117"/>
+  <circle cx="88" cy="90" r="23" fill="url(#lock)" filter="url(#shadow)"/>
+
+  <!-- Lock shackle -->
+  <path d="M80 88 V81 a8 8 0 0 1 16 0 V88"
+        fill="none" stroke="#0d1117" stroke-width="4.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Lock body -->
+  <rect x="77" y="87" width="22" height="17" rx="4" fill="#0d1117"/>
+
+  <!-- Keyhole circle -->
+  <circle cx="88" cy="94" r="3.5" fill="#f59e0b"/>
+  <!-- Keyhole stem -->
+  <rect x="86.5" y="94" width="3" height="5" rx="1.5" fill="#f59e0b"/>
+</svg>
