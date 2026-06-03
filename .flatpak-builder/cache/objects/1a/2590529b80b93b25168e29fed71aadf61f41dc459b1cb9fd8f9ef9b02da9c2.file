@@ -1,5 +1,0 @@
-[Runtime]
-name=io.github.hersaintel.secretknowledge.Debug
-
-[ExtensionOf]
-ref=app/io.github.hersaintel.secretknowledge/x86_64/master

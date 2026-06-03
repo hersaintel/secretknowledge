@@ -9,7 +9,7 @@ import urllib.request, urllib.error, urllib.parse
 import gi
 
 from gi.repository import GLib
-GLib.set_prgname("io.github.hersaintel.secretknowledge")
+GLib.set_prgname("io.hersaintel.secretknowledge")
 GLib.set_application_name("Book of Secret Knowledge")
 
 gi.require_version("Gtk", "4.0")
@@ -23,7 +23,7 @@ for wk in ("6.0", "4.1", "4.0"):
 
 from gi.repository import Gtk, Adw, WebKit, Gio, Gdk
 
-APP_ID   = "io.github.hersaintel.secretknowledge"
+APP_ID   = "io.hersaintel.secretknowledge"
 APP_NAME = "Book of Secret Knowledge"
 VERSION  = "2.0.0"
 

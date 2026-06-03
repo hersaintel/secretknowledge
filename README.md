@@ -11,8 +11,8 @@ Hi, I'm **Hersa** — a cyber intelligence analyst. I built this app because I g
 ## Install via Flatpak
 
 ```bash
-flatpak install flathub io.github.hersaintel.secretknowledge
-flatpak run io.github.hersaintel.secretknowledge
+flatpak install flathub io.hersaintel.secretknowledge
+flatpak run io.hersaintel.secretknowledge
 ```
 
 ---
@@ -33,8 +33,8 @@ flatpak install flathub org.gnome.Platform//46 org.gnome.Sdk//46
 
 ```bash
 cd secret-knowledge-app
-flatpak-builder --user --install --force-clean build-dir io.github.hersaintel.secretknowledge.json
-flatpak run io.github.hersaintel.secretknowledge
+flatpak-builder --user --install --force-clean build-dir io.hersaintel.secretknowledge.json
+flatpak run io.hersaintel.secretknowledge
 ```
 
 **Without Flatpak (dev mode)** — requires Python 3.10+, GTK4, Libadwaita, WebKitGTK 6.0:
