@@ -1,0 +1,14 @@
+# English translations for secret-knowledge
+# Copyright (C) 2026 Hersa
+msgid ""
+msgstr ""
+"Project-Id-Version: secret-knowledge 2.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 00:00+0000\n"
+"PO-Revision-Date: 2026-06-02 00:00+0000\n"
+"Last-Translator: Hersa <cia.uncoated640@passinbox.com>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
