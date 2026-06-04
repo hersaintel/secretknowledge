@@ -1,5 +1,4 @@
 # 🛡️ Book of Secret Knowledge
-# 🛡️ Book of Secret Knowledge
 
 [![Snap Store](https://snapcraft.io/secret-knowledge/badge.svg)](https://snapcraft.io/secret-knowledge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
