@@ -1,11 +1,14 @@
 # 🛡️ Book of Secret Knowledge
 
-[![Snap Store](https://snapcraft.io/secret-knowledge/badge.svg)](https://snapcraft.io/secret-knowledge)
+---
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Platform](https://img.shields.io/badge/Platform-Linux-orange.svg)](https://snapcraft.io/secret-knowledge)
+[![Platform](https://img.shields.io/badge/Platform-Linux-orange.svg)](https://github.com/hersaintel/secretknowledge)
 [![Tools](https://img.shields.io/badge/Tools-1657-58a6ff.svg)](https://github.com/hersaintel/secretknowledge)
 [![Maintained](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/hersaintel/secretknowledge)
 [![GitHub Stars](https://img.shields.io/github/stars/hersaintel/secretknowledge?style=social)](https://github.com/hersaintel/secretknowledge)
+
+---
 
 Hi, I'm **Hersa** — a cyber intelligence analyst. I built this app because I got tired of jumping between tabs looking for the right security tool. This is a free, offline Linux desktop app that puts **1,657 security tools and resources** into one clean, searchable interface — pentest frameworks, OSINT tools, AI security, cryptography, networking, cloud security, and more, all with embedded documentation.
 
@@ -13,60 +16,65 @@ Hi, I'm **Hersa** — a cyber intelligence analyst. I built this app because I g
 >
 > 📸 Instagram: [@hersaintel](https://instagram.com/hersaintel) · Discord: **@ers49**
 
----
 
-## Install via Snap *(Recommended)*
 
-```bash
-sudo snap install secret-knowledge
-```
+## Install via Flatpak (Recommended)
 
----
+This app runs best via Flatpak. Follow these steps to install and run it locally on any Linux distro.
 
-## Install from Source
-
-### Prerequisites
+### Step 1 — Install Flatpak
 
 ```bash
 # Debian / Ubuntu / Mint / Kali / Parrot
-sudo apt install git python3 python3-gi python3-gi-cairo \
-    gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-webkit2-6.0 \
-    meson ninja-build gettext
+sudo apt install flatpak
 
 # Fedora
-sudo dnf install git python3 python3-gobject gtk4 libadwaita \
-    webkitgtk6.0 meson ninja-build gettext
+sudo dnf install flatpak
 
 # Arch
-sudo pacman -S git python python-gobject gtk4 libadwaita \
-    webkit2gtk-6.0 meson ninja gettext
+sudo pacman -S flatpak
 ```
 
-### Clone and Build
+### Step 2 — Add the GNOME SDK (one-time setup)
+
+```bash
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.gnome.Platform//50 org.gnome.Sdk//50
+```
+
+### Step 3 — Clone the Repository
 
 ```bash
 git clone https://github.com/hersaintel/secretknowledge.git
 cd secretknowledge
-
-# Set up build
-meson setup build --prefix=/usr
-
-# Compile
-ninja -C build
-
-# Install system-wide
-sudo ninja -C build install
-
-# Run
-secret-knowledge
 ```
 
-### Run Without Installing (Dev Mode)
+### Step 4 — Build and Install
 
 ```bash
-git clone https://github.com/hersaintel/secretknowledge.git
+flatpak-builder --user --install --force-clean build-dir \
+    io.github.hersaintel.secretknowledge.json
+```
+
+### Step 5 — Run
+
+```bash
+flatpak run io.github.hersaintel.secretknowledge
+```
+
+That's it — the app runs fully offline with no internet required after setup.
+
+---
+
+## Updating
+
+When a new version is released, pull the latest changes and rebuild:
+
+```bash
 cd secretknowledge
-python3 src/secret_knowledge/main.py
+git pull origin master
+flatpak-builder --user --install --force-clean build-dir \
+    io.github.hersaintel.secretknowledge.json
 ```
 
 ---
@@ -74,11 +82,22 @@ python3 src/secret_knowledge/main.py
 ## Uninstall
 
 ```bash
-# If installed via Snap
-sudo snap remove secret-knowledge
+flatpak uninstall io.github.hersaintel.secretknowledge
+```
 
-# If installed from source
-sudo ninja -C build uninstall
+---
+
+## Run Without Installing (Dev Mode)
+
+If you just want to test or contribute without a full install:
+
+```bash
+# Install Python dependencies
+sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-4.0 \
+    gir1.2-adw-1 gir1.2-webkit-6.0
+
+# Run directly
+python3 src/secret_knowledge/main.py
 ```
 
 ---
@@ -104,7 +123,6 @@ sudo ninja -C build uninstall
 | `Ctrl++` / `Ctrl+-` | Zoom in / out |
 | `Ctrl+0` | Reset zoom |
 | `Ctrl+Q` | Quit |
-| `/` | Focus search |
 | `Escape` | Close panel |
 
 ---
