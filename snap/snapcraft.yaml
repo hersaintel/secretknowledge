@@ -1,6 +1,6 @@
 name: secret-knowledge
 base: core24
-version: '2.0.3'
+version: '2.0.4'
 summary: Offline browser for 1,657 security tools and resources
 description: |
   The Book of Secret Knowledge is a free offline Linux desktop app that puts
@@ -32,7 +32,6 @@ apps:
       SECRET_KNOWLEDGE_DATA: $SNAP/share/secret-knowledge/data
       WEBKIT_DISABLE_SANDBOX_THIS_IS_DANGEROUS: "1"
       WEBKIT_DISABLE_COMPOSITING_MODE: "1"
-      WEBKIT_EXEC_PATH: $SNAP/usr/lib/x86_64-linux-gnu/webkitgtk-6.0
 
 parts:
   secret-knowledge:
@@ -63,8 +62,8 @@ parts:
       - gir1.2-adw-1
       - gir1.2-webkit-6.0
       - libadwaita-1-0
-      - libwebkitgtk-6.0-dev
-      - webkit2gtk-driver
+      - libwebkitgtk-6.0-4
+      - libjavascriptcoregtk-6.0-1
 
   launcher:
     plugin: dump
