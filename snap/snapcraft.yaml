@@ -1,6 +1,6 @@
 name: secret-knowledge
 base: core24
-version: '2.0.0'
+version: '2.0.1'
 summary: Offline browser for 1,657 security tools and resources
 description: |
   The Book of Secret Knowledge is a free offline Linux desktop app that puts
