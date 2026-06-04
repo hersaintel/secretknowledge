@@ -8,40 +8,70 @@ Hi, I'm **Hersa** — a cyber intelligence analyst. I built this app because I g
 
 ---
 
-## Install via Flatpak
+## Install via Snap *(Recommended)*
 
 ```bash
-flatpak install flathub io.github.hersaintel.secretknowledge
-flatpak run io.github.hersaintel.secretknowledge
+sudo snap install secret-knowledge
 ```
 
 ---
 
-## Build from Source
+## Install from Source
 
-**Prerequisites:**
+### Prerequisites
 
 ```bash
-# Add Flathub remote
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+# Debian / Ubuntu / Mint / Kali / Parrot
+sudo apt install git python3 python3-gi python3-gi-cairo \
+    gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-webkit2-6.0 \
+    meson ninja-build gettext
 
-# Install GNOME SDK (one-time)
-flatpak install flathub org.gnome.Platform//46 org.gnome.Sdk//46
+# Fedora
+sudo dnf install git python3 python3-gobject gtk4 libadwaita \
+    webkitgtk6.0 meson ninja-build gettext
+
+# Arch
+sudo pacman -S git python python-gobject gtk4 libadwaita \
+    webkit2gtk-6.0 meson ninja gettext
 ```
 
-**Build & install:**
+### Clone and Build
 
 ```bash
-cd secret-knowledge-app
-flatpak-builder --user --install --force-clean build-dir io.github.hersaintel.secretknowledge.json
-flatpak run io.github.hersaintel.secretknowledge
+git clone https://github.com/hersaintel/secretknowledge.git
+cd secretknowledge
+
+# Set up build
+meson setup build --prefix=/usr
+
+# Compile
+ninja -C build
+
+# Install system-wide
+sudo ninja -C build install
+
+# Run
+secret-knowledge
 ```
 
-**Without Flatpak (dev mode)** — requires Python 3.10+, GTK4, Libadwaita, WebKitGTK 6.0:
+### Run Without Installing (Dev Mode)
 
 ```bash
-sudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-webkit-6.0  # Debian/Ubuntu
-python3 src/main.py
+git clone https://github.com/hersaintel/secretknowledge.git
+cd secretknowledge
+python3 src/secret_knowledge/main.py
+```
+
+---
+
+## Uninstall
+
+```bash
+# If installed via Snap
+sudo snap remove secret-knowledge
+
+# If installed from source
+sudo ninja -C build uninstall
 ```
 
 ---
@@ -69,6 +99,12 @@ python3 src/main.py
 | `Ctrl+Q` | Quit |
 | `/` | Focus search |
 | `Escape` | Close panel |
+
+---
+
+## Contributing
+
+Found a tool that should be listed? Open an issue or pull request on GitHub. All suggestions welcome.
 
 ---
 
