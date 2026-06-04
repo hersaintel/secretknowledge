@@ -1,5 +1,12 @@
 # 🛡️ Book of Secret Knowledge
+# 🛡️ Book of Secret Knowledge
 
+[![Snap Store](https://snapcraft.io/secret-knowledge/badge.svg)](https://snapcraft.io/secret-knowledge)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Platform](https://img.shields.io/badge/Platform-Linux-orange.svg)](https://snapcraft.io/secret-knowledge)
+[![Tools](https://img.shields.io/badge/Tools-1657-58a6ff.svg)](https://github.com/hersaintel/secretknowledge)
+[![Maintained](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/hersaintel/secretknowledge)
+[![GitHub Stars](https://img.shields.io/github/stars/hersaintel/secretknowledge?style=social)](https://github.com/hersaintel/secretknowledge)
 Hi, I'm **Hersa** — a cyber intelligence analyst. I built this app because I got tired of jumping between tabs looking for the right security tool. This is a free, offline Linux desktop app that puts **1,657 security tools and resources** into one clean, searchable interface — pentest frameworks, OSINT tools, AI security, cryptography, networking, cloud security, and more, all with embedded documentation.
 
 > **Disclaimer:** I don't own any of the tools or resources listed here. Everything remains the intellectual property of its respective authors. This is simply a more convenient way to access publicly available security resources. If you're a tool author with concerns, reach out — I'll address it promptly.
