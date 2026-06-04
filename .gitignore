@@ -1,0 +1,7 @@
+build-dir/
+.flatpak-builder/
+__pycache__/
+*.pyc
+snap/snapd/
+snap/core*/
+snap/gnome*/
