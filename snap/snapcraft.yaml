@@ -53,7 +53,6 @@ parts:
       - gir1.2-gtk-4.0
       - gir1.2-adw-1
       - gir1.2-webkit-6.0
-      - libwebkitgtk-6.0-0
       - libadwaita-1-0
 
   launcher:
