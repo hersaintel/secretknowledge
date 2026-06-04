@@ -36,6 +36,11 @@ parts:
     source: .
     meson-parameters:
       - --prefix=/usr
+    override-build: |
+      craftctl default
+      mkdir -p $CRAFT_PART_INSTALL/share/secret-knowledge/data
+      cp $CRAFT_PART_SRC/data/secret-knowledge-v2.html \
+         $CRAFT_PART_INSTALL/share/secret-knowledge/data/
     build-packages:
       - python3
       - python3-gi
