@@ -25,14 +25,14 @@ jobs:
             libadwaita-1-dev libgtk-4-dev \
             libwebkitgtk-6.0-dev \
             gir1.2-gtk-4.0 gir1.2-adw-1 \
-            gir1.2-webkit2-6.0 \
-            libwebkitgtk-6.0-0 libadwaita-1-0
+            gir1.2-webkitgtk-6.0 \
+            libwebkitgtk-6.0-dev \
+            libadwaita-1-0
 
       - name: Build Snap
-        run: |
-          sudo --preserve-env=HOME,PATH,SNAPCRAFT_BUILD_ENVIRONMENT \
-          SNAPCRAFT_BUILD_ENVIRONMENT=host \
-          snapcraft --destructive-mode
+        env:
+          SNAPCRAFT_BUILD_ENVIRONMENT: host
+        run: sudo -E snapcraft --destructive-mode
 
       - name: Upload snap artifact
         uses: actions/upload-artifact@v4
